@@ -52,7 +52,8 @@ const FileUpload = ({ onFileProcessed, isLoading, setIsLoading }: FileUploadProp
     formData.append('invoice', selectedFile);
 
     try {
-      const response = await fetch('http://localhost:3001/api/upload', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/upload`, {
         method: 'POST',
         body: formData,
       });
