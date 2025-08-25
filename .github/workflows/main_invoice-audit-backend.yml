@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -25,11 +25,10 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd invoice-audit-backend
           npm install
           npm run build --if-present
           npm run test --if-present
-      
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -52,16 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_29BB50CA2DF44EFB9A490DF70D58FDAC }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_E3CAF890E25B4845B74CBBEFA6313484 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_78B0B7EE3E0B4DF7BD00A1DF94306A9F }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A3F98B2232194B4998BC7A8D7F117AC8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F32470F333DD42A599C0E87966EA4983 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3BD01062252F427DA88D84B06C30C3DE }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'invoice-audit-backend'
           slot-name: 'Production'
-          package: invoice-audit-backend
-
+          package: .
           
