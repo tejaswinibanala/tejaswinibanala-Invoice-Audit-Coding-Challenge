@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#3B82F6" stroke="#1E40AF" stroke-width="2"/>
+  
+  <!-- Cross symbol (medical/pharmacy) -->
+  <path d="M12 8h8v4h-8z" fill="white"/>
+  <path d="M14 10h4v8h-4z" fill="white"/>
+  
+  <!-- Pill shape -->
+  <ellipse cx="16" cy="20" rx="6" ry="3" fill="white" opacity="0.9"/>
+  
+  <!-- Data dots -->
+  <circle cx="8" cy="8" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="24" cy="8" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="8" cy="24" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="24" cy="24" r="1.5" fill="white" opacity="0.7"/>
+</svg>
