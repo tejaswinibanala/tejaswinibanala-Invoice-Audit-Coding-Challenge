@@ -79,7 +79,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -135,9 +134,9 @@ tmp/
 temp/
 
 # Build outputs
-dist/
 build/
 out/
+# Note: dist/ is needed for Azure deployment, so it's not ignored
 
 # Test outputs
 test-results/
